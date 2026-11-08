@@ -1,0 +1,132 @@
+/* ==========================================================================
+   LABORATORIO VIRTUAL DE ESTADÍSTICA APLICADA — ESTILOS PERSONALIZADOS
+   Tema: Conocimiento y práctica de ciberseguridad en estudiantes universitarios
+   ========================================================================== */
+
+:root {
+  --bgmain: #F8FAFC;
+  --card: #FFFFFF;
+  --petrol: #245B70;
+  --petrol-dark: #1B4657;
+  --sage: #6B9B83;
+  --softyellow: #F2C66D;
+  --ink: #263238;
+  --muted: #64748B;
+  --border-light: #E2E8F0;
+}
+
+/* Tipografía numérica tabular para alineación de tablas estadísticas */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbar limpio y discreto */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Estado de botones de navegación lateral y móvil */
+.nav-btn {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.nav-btn.active-nav {
+  background-color: var(--softyellow);
+  color: var(--ink);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+}
+
+/* Animaciones discretas de cambio de pestaña */
+.tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeSlideIn 0.22s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cabeceras ordenables en la matriz de datos */
+.sortable-th {
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+/* Ajuste responsivo de lienzos Canvas */
+canvas {
+  max-width: 100%;
+}
+
+/* Reglas de Impresión Limpia (@media print) */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .tab-panel {
+    display: none !important;
+  }
+
+  .tab-panel.active {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .bg-card {
+    box-shadow: none !important;
+    border: 1px solid #CBD5E1 !important;
+    break-inside: avoid;
+  }
+
+  .overflow-x-auto {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+}
